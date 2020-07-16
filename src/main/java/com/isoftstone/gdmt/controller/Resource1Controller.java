@@ -54,10 +54,10 @@ public class Resource1Controller {
 			 * res.setMenu_id(mid);
 			 */
 				resourceService.insert(res);
-				return new Result(true, "æ·»åŠ æˆåŠŸ!");
+				return new Result(true, "Ìí¼Ó³É¹¦!");
 			}catch (Exception e) {
 				e.printStackTrace();
-				return new Result(false, "å¢åŠ å¤±è´¥!");
+				return new Result(false, "Ìí¼ÓÊ§°Ü!");
 			}
 		}
 		@RequestMapping("/update")
@@ -71,7 +71,7 @@ public class Resource1Controller {
 				return new Result(false, "ä¿®æ”¹å¤±è´¥!");
 			}
 		}
-		
+		//update
 		@RequestMapping("/remove")
 		@ResponseBody
 		public Result remove(String id) {
