@@ -42,7 +42,7 @@ public class NewsController {
             return new Result(false, "增加失败");
         }
     }
-
+    
 
     @RequestMapping("/remove")
     @ResponseBody
