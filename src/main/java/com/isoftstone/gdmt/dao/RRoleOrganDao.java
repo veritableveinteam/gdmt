@@ -7,6 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import java.util.List;
 
 public interface RRoleOrganDao {
+	
     long countByExample(TbRRoleOrganExample example);
 
     int deleteByExample(TbRRoleOrganExample example);

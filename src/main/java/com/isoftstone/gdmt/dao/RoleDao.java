@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface RoleDao {
+	
     long countByExample(RoleExample example);
 
     int deleteByExample(RoleExample example);
@@ -27,4 +28,5 @@ public interface RoleDao {
     int updateByPrimaryKeySelective(Role record);
 
     int updateByPrimaryKey(Role record);
+    
 }
