@@ -19,6 +19,8 @@ public class NewsController {
 
     @Autowired
     private NewsService newsService;
+    
+    
 
     @RequestMapping("/findPagination")
     @ResponseBody
