@@ -69,8 +69,7 @@ public class RoleController {
 	@ResponseBody
 	public int updateRole(@ModelAttribute Role Role) {
 		return this.roleService.updateRole(Role);
-	}
-
+	}//»Ø¸´
 	@RequestMapping(value = "/remove")
 	@ResponseBody
 	public int removeRole(@RequestParam String id) {
