@@ -31,7 +31,7 @@
 		<result column="menu_type" jdbcType="VARCHAR"
 			property="menu_type" />
 	</resultMap>
-	<resultMap id="BaseRes1"
+	<resultMap id="Baseurl"
 		type="com.isoftstone.gdmt.model.Resource">
 		<id column="menu_id" jdbcType="VARCHAR" property="menu_id" />
 		<result column="dir_code" jdbcType="VARCHAR"
@@ -61,7 +61,7 @@
 		<result column="menu_type" jdbcType="VARCHAR"
 			property="menu_type" />
 		<association property="parent"
-			javaType="com.isoftstone.gdmt.model.Resource1">
+			javaType="com.isoftstone.gdmt.model.url">
 			<id property="res_uuid" column="res_uuid" />
 			<result property="res_url" column="res_url" />
 		</association>
@@ -76,11 +76,11 @@
 		select * from `pt_menu_directory` where
 		`parent_id`=#{parent_uuid}
 	</select>
-	<select id="findUrl" resultMap="BaseRes1">
+	<select id="findUrl" resultMap="Baseurl">
 		select * from pt_res,pt_menu_directory WHERE pt_res.res_uuid =
 		pt_menu_directory.res_uuid
 	</select>
-	<select id="findUrlById" resultMap="BaseRes1"
+	<select id="findUrlById" resultMap="Baseurl"
 		parameterType="java.lang.String">
 		select * from pt_menu_directory,pt_res WHERE pt_res.res_uuid =
 		pt_menu_directory.res_uuid and pt_menu_directory.menu_id=#{id}

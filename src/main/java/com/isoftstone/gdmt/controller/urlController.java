@@ -7,17 +7,17 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.isoftstone.gdmt.model.Resource1;
-import com.isoftstone.gdmt.service.Resource1Service;
+import com.isoftstone.gdmt.model.url;
+import com.isoftstone.gdmt.service.urlService;
 import com.isoftstone.gdmt.util.PageResult;
 import com.isoftstone.gdmt.util.Result;
 
 @Controller
-@RequestMapping("/res1")
-public class Resource1Controller {
+@RequestMapping("/url")
+public class urlController {
 		
 		@Autowired
-		private Resource1Service resourceService;
+		private urlService resourceService;
 		
 		
 
@@ -35,34 +35,34 @@ public class Resource1Controller {
 		}
 		@RequestMapping("/getRes")
 		@ResponseBody
-		public List<Resource1> getRes(){
+		public List<url> getRes(){
 			return resourceService.finAll();
 		}
 		
 		@RequestMapping("/getOrg")
 		@ResponseBody
-		public Resource1 getOrg(String id) {
+		public url getOrg(String id) {
 			return resourceService.findOne(id);
 		}
 		
 		@RequestMapping("/insert")
 		@ResponseBody
-		public Result insert(Resource1 res) {
+		public Result insert(url res) {
 			try {
 			/*
 			 * String mid = UUID.randomUUID().toString().replace("-", "").toLowerCase();
 			 * res.setMenu_id(mid);
 			 */
 				resourceService.insert(res);
-				return new Result(true, "ÃÌº”≥…π¶!");
+				return new Result(true, "ÔøΩÔøΩ”≥…πÔøΩ!");
 			}catch (Exception e) {
 				e.printStackTrace();
-				return new Result(false, "ÃÌº” ß∞‹!");
+				return new Result(false, "ÔøΩÔøΩÔøΩ ßÔøΩÔøΩ!");
 			}
 		}
 		@RequestMapping("/update")
 		@ResponseBody
-		public Result update(Resource1 res) {
+		public Result update(url res) {
 			try {
 				resourceService.update(res);
 				return new Result(true, "‰øÆÊîπÊàêÂäü!");

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.isoftstone.gdmt.dao.Resource1Mapper">
-  <resultMap id="BaseResultMap" type="com.isoftstone.gdmt.model.Resource1">
+<mapper namespace="com.isoftstone.gdmt.dao.urlMapper">
+  <resultMap id="BaseResultMap" type="com.isoftstone.gdmt.model.url">
     <id column="res_uuid" jdbcType="VARCHAR" property="res_uuid" />
     <result column="id" jdbcType="VARCHAR" property="id" />
     <result column="res_id" jdbcType="VARCHAR" property="res_id" />
@@ -72,7 +72,7 @@
   <sql id="Base_Column_List">
     `res_uuid`, id, res_id, res_name, res_url, res_type, parent_uuid, `order`
   </sql>
-  <select id="selectByExample" parameterType="com.isoftstone.gdmt.model.Resource1Example" resultMap="BaseResultMap">
+  <select id="selectByExample" parameterType="com.isoftstone.gdmt.model.urlExample" resultMap="BaseResultMap">
     select
     <if test="distinct">
       distinct
@@ -96,13 +96,13 @@
     delete from pt_res
     where res_uuid = #{res_uuid,jdbcType=VARCHAR}
   </delete>
-  <delete id="deleteByExample" parameterType="com.isoftstone.gdmt.model.Resource1Example">
+  <delete id="deleteByExample" parameterType="com.isoftstone.gdmt.model.urlExample">
     delete from pt_res
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.isoftstone.gdmt.model.Resource1">
+  <insert id="insert" parameterType="com.isoftstone.gdmt.model.url">
     insert into pt_res (res_uuid, id, res_id, 
       res_name, res_url, res_type, 
       parent_uuid, order)
@@ -110,7 +110,7 @@
       #{res_name,jdbcType=VARCHAR}, #{res_url,jdbcType=VARCHAR}, #{res_type,jdbcType=VARCHAR}, 
       #{parent_uuid,jdbcType=VARCHAR}, #{order,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.isoftstone.gdmt.model.Resource1">
+  <insert id="insertSelective" parameterType="com.isoftstone.gdmt.model.url">
     insert into pt_res
     <trim prefix="(" suffix=")" suffixOverrides=",">
       <if test="res_uuid != null">
@@ -165,7 +165,7 @@
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.isoftstone.gdmt.model.Resource1Example" resultType="java.lang.Long">
+  <select id="countByExample" parameterType="com.isoftstone.gdmt.model.urlExample" resultType="java.lang.Long">
     select count(*) from pt_res
     <if test="_parameter != null">
       <include refid="Example_Where_Clause" />
@@ -217,7 +217,7 @@
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.isoftstone.gdmt.model.Resource1">
+  <update id="updateByPrimaryKeySelective" parameterType="com.isoftstone.gdmt.model.url">
     update pt_res
     <set>
       <if test="id != null">
@@ -244,7 +244,7 @@
     </set>
     where res_uuid = #{res_uuid,jdbcType=VARCHAR}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.isoftstone.gdmt.model.Resource1">
+  <update id="updateByPrimaryKey" parameterType="com.isoftstone.gdmt.model.url">
     update pt_res
     set id = #{id,jdbcType=VARCHAR},
       res_id = #{res_id,jdbcType=VARCHAR},
