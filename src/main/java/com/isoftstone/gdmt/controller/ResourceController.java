@@ -28,13 +28,6 @@ public class ResourceController {
 	public Pagination<Resource> findPagination(int pageNumber, int pageSize) {
 		return resourceService.findPagination(pageNumber, pageSize);
 	}
-	/*
-	 * @RequestMapping("/getRes")
-	 * 
-	 * @ResponseBody public Resource getRes(String id) {
-	 * System.out.println("Controller uuid:\n"+id); return
-	 * resourceService.findOne(id); }
-	 */
 
 	@RequestMapping("/findPage")
 	public PageResult findPage(int page, int rows) {

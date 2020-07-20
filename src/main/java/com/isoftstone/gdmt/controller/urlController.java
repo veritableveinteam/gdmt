@@ -18,17 +18,7 @@ public class urlController {
 		
 		@Autowired
 		private urlService resourceService;
-		
-		
 
-	/*
-	 * @RequestMapping("/getRes")
-	 * 
-	 * @ResponseBody public Resource getRes(String id) {
-	 * System.out.println("Controller uuid:\n"+id); return
-	 * resourceService.findOne(id); }
-	 */
-		
 		@RequestMapping("/findPage")
 		public PageResult findPage(int page, int rows) {
 			return resourceService.findPage(page, rows);
@@ -49,15 +39,11 @@ public class urlController {
 		@ResponseBody
 		public Result insert(url res) {
 			try {
-			/*
-			 * String mid = UUID.randomUUID().toString().replace("-", "").toLowerCase();
-			 * res.setMenu_id(mid);
-			 */
 				resourceService.insert(res);
-				return new Result(true, "��ӳɹ�!");
+				return new Result(true, "添加成功!!");
 			}catch (Exception e) {
 				e.printStackTrace();
-				return new Result(false, "���ʧ��!");
+				return new Result(false, "增加失败!");
 			}
 		}
 		@RequestMapping("/update")

@@ -12,11 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 import java.util.UUID;
 
-/**
- * controller
- * @author Administrator
- *
- */
 @RestController
 @RequestMapping("/duty")
 public class RRoleOrganController {
@@ -94,7 +89,7 @@ public class RRoleOrganController {
 
     /**
      * 批量删除
-     * @param ids
+     * @param id
      * @return
      */
     @RequestMapping("/remove")
@@ -108,13 +103,6 @@ public class RRoleOrganController {
         }
     }
 
-    /**
-     * 查询+分页
-     * @param brand
-     * @param page
-     * @param rows
-     * @return
-     */
     @RequestMapping("/search")
     public PageResult search(TbRRoleOrgan rRoleOrgan, int pageNumber, int pageSize  ){
         return rRoleOrganService.findPage(rRoleOrgan, pageNumber, pageSize);

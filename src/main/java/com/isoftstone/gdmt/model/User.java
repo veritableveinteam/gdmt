@@ -4,11 +4,7 @@ import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
 
-/**
- * 
- * @author zz
- *
- */
+
 public class User
 {
 	/* 用户主键 */
