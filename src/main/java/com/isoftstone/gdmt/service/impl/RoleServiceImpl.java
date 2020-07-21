@@ -39,12 +39,12 @@ public class RoleServiceImpl implements RoleService {
         return roleDao.insertSelective(role);
     }
 
-    public int updateRole(Role role) {
-        return roleDao.updateByPrimaryKeySelective(role);
+    public void updateRole(Role role) {
+        roleDao.updateByPrimaryKeySelective(role);
     }
 
-    public int removeRole(String id) {
-        return roleDao.deleteByPrimaryKey(id);
+    public void removeRole(String id) {
+        roleDao.deleteByPrimaryKey(id);
     }
 
 }
