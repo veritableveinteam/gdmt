@@ -7,20 +7,36 @@ import java.util.List;
 
 public interface RoleService {
 
-    Pagination<Role> getRoles(Pagination<Role> page);
+    public Pagination<Role> getRoles(Pagination<Role> page);
 
-    Role getRole(String uuid);
+    public Role getRole(String uuid);
 
-    List<String> getResources(String roleId);
+    public List<String> getResources(String roleId);
 
-    int linkResource(String roleId, String resources);
+    /**
+     * 关联资源
+     */
+    public int linkResource(String roleId, String resources);
 
-    int insertRole(Role role);
+    /**
+     * 增加
+     */
+    public int insertRole(Role role);
 
-    int updateRole(Role role);
+    /**
+     * 修改
+     */
+    public void updateRole(Role role);
 
-    int removeRole(String id);
+    /**
+     * 删除
+     */
+    public void removeRole(String id);
 
-    List<Role> findAll();
+    /**
+     * 返回全部列表
+     * @return
+     */
+    public List<Role> findAll();
 
 }
